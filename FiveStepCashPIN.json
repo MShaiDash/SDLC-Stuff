@@ -1,0 +1,41 @@
+{
+  "title": "Set a Cash PIN for Your Cash App Account",
+  "summary": "Secure your Cash App account in five simple steps. This guide walks you through enabling a four-digit Cash PIN for added security.",
+  "table_of_contents": [
+    "Getting Started",
+    "Locate Your Avatar",
+    "Go to your Settings",
+    "Go to Your Privacy & Security Settings",
+    "Security Lock & Cash PIN Confirmation",
+    "A Few Things to Remember"
+  ],
+  "steps": [
+    {
+      "step": "Getting Started",
+      "description": "Set up a four-digit personal identification number (PIN) as an added layer of protection for your Cash App account. This takes less than five minutes."
+    },
+    {
+      "step": "Locate Your Avatar",
+      "description": "Find your avatar icon in the top right corner of the screen, to the right of the clock symbol. Click it to open settings."
+    },
+    {
+      "step": "Go to your Settings",
+      "description": "Clicking the avatar icon brings you to the settings page."
+    },
+    {
+      "step": "Go to Your Privacy & Security Settings",
+      "description": "On the settings page, scroll to the fifth option labeled 'Privacy & Security' and click it."
+    },
+    {
+      "step": "Security Lock & Cash PIN Confirmation",
+      "description": "Click the 'Security Lock' toggle. When it turns green, you\u2019ll be prompted to enter a four-digit PIN using the on-screen keypad."
+    }
+  ],
+  "notes": [
+    "After setting your Cash PIN, you will be asked to enter it when sending money.",
+    "To turn off Security Lock or change your PIN, you must re-enter your existing PIN.",
+    "Cash App will notify you by email if your PIN is changed."
+  ],
+  "author": "M\u2019Shai S. Dash",
+  "version": "Sample v.1 2022"
+}

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cash PIN Guide</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #222;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #0057B8;
+    }
+    h2 {
+      color: #007ACC;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .step {
+      margin: 20px 0;
+      padding: 15px;
+      border-left: 5px solid #007ACC;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+    .notes {
+      background-color: #eef6ff;
+      border-left: 5px solid #0057B8;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    .meta {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title"></h1>
+  <p id="summary"></p>
+  <h2>Table of Contents</h2>
+  <ul id="toc"></ul>
+  <h2>Steps</h2>
+  <div id="steps"></div>
+  <div class="notes">
+    <h2>A Few Things to Remember</h2>
+    <ul id="notes"></ul>
+  </div>
+  <div class="meta" id="meta"></div>
+
+  <script>
+    d3.json("FiveStepCashPIN.json").then(function(data) {
+      d3.select("#title").text(data.title);
+      d3.select("#summary").text(data.summary);
+
+      d3.select("#toc")
+        .selectAll("li")
+        .data(data.table_of_contents)
+        .enter()
+        .append("li")
+        .text(d => d);
+
+      d3.select("#steps")
+        .selectAll("div.step")
+        .data(data.steps)
+        .enter()
+        .append("div")
+        .attr("class", "step")
+        .html(d => `<strong>${d.step}</strong><br>${d.description}`);
+
+      d3.select("#notes")
+        .selectAll("li")
+        .data(data.notes)
+        .enter()
+        .append("li")
+        .text(d => d);
+
+      d3.select("#meta")
+        .text(`Author: ${data.author} | Version: ${data.version}`);
+    });
+  </script>
+</body>
+</html>
